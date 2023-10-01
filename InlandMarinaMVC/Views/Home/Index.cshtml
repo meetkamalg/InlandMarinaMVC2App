@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="jumbotron">
+    <p></p>
+</div>
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Message
+    </div>
+}
+<div class="text-center">
+     <h1 class="display-4">Welcome to Inland Marina located on the south shore Inland Lake, just a small commute from major centers in the southwest. </h1>
+    <p>Inland Marina was established in the 1967 shortly after Inland Lake was created as a result of the
+    Southwest dam. From its humble beginnings, it has grown to be the largest marina on Inland Lake. Due
+    to the warm climate that extends year-round, Inland Lake has become a popular tourist destination in
+    the southwest. Boat owners from California, Arizona, Nevada, and Utah are attracted to the area.
+    Inland Marina has 90 slips ranging in size from 16 to 32 feet in length. Dock services include electrical
+    and fresh water. </p>
+</div>

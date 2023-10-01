@@ -1,0 +1,32 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.jumbotron {
+    background-image: url('../images/inlandbanner_v3_800x100.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-group {
+    margin-left: 7px;
+}

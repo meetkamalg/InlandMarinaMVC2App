@@ -1,0 +1,60 @@
+﻿@model IEnumerable<InlandMarinaData.Slip>
+@{
+    ViewData["Title"] = "Slips";
+}
+
+<h1 style="text-align: center">All Avalible Slips</h1>
+<form asp-action="Slip" method="post">
+    <label for="DockID">Select a Dock:</label>
+    <p>
+        <select name="DockID" asp-items="@ViewBag.Docks" class="form-control"></select>
+    </p>
+    <input type="submit" value="Filter" class="btn btn-primary" />
+</form>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div style="margin-top: 20px">
+        <a class="btn btn-success float-right" asp-controller="Booking" asp-action="Lease">Lease New Slip</a>
+    </div>
+}
+else
+{
+    <div style="margin-top: 20px">
+        <p class="float-right"> Login or Register to Lease a Slip</p>
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Length)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Width)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Length)
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
+

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<InlandMarinaData.Slip>
+
+<h1 style="text-align: center">Lease a Slip</h1>
+
+<form asp-action="ConfirmLease" method="post">
+    <label for="SlipID">Select a Slip:</label>
+    <p>
+        <select name="SlipID" class="form-control">
+            @foreach (var item in Model)
+            {
+                <option value="@item.ID">Slip ID: @item.ID | Width: @item.Width | Length: @item.Length | Dock ID: @item.DockID</option>
+            }
+        </select>
+    </p>
+    <input type="submit" value="Lease Selected Slip" class="btn btn-primary" />
+</form>
